@@ -4,6 +4,9 @@ steps:
     args:
       - "-c"
       - |
+        echo "🔐 Recuperando secretos..."
+        export GCP_REGION=$(gcloud secrets versions access latest --secret=GCP_REGION)
+
         echo "✅ Desplegando start_compute_instance..."
         gcloud functions deploy start_compute_instance \
           --runtime python310 \

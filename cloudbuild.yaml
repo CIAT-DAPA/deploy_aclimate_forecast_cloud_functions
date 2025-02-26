@@ -4,8 +4,6 @@ steps:
     args:
       - "-c"
       - |
-        echo "🔐 Recuperando secretos..."
-        export GCP_REGION=$(gcloud secrets versions access latest --secret=GCP_REGION)
 
         echo "✅ Desplegando start_compute_instance..."
         gcloud functions deploy start_compute_instance \
@@ -14,7 +12,7 @@ steps:
           --entry-point start_compute_instance \
           --region=northamerica-northeast2 \
           --source=./start-aclimate-instance \
-          --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
+          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
         echo "✅ Desplegando stop_compute_instance..."
@@ -24,7 +22,7 @@ steps:
           --entry-point stop_compute_instance \
           --region=northamerica-northeast2 \
           --source=./stop-aclimate-instance \
-          --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
+          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
 timeout: 1200s

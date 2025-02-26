@@ -12,7 +12,7 @@ steps:
           --runtime python310 \
           --trigger-topic start-compute \
           --entry-point start_compute_instance \
-          --region=$GCP_REGION \
+          --region=northamerica-northeast2 \
           --source=./start-aclimate-instance \
           --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
           --no-allow-unauthenticated
@@ -22,7 +22,7 @@ steps:
           --runtime python310 \
           --trigger-topic stop-compute \
           --entry-point stop_compute_instance \
-          --region=$GCP_REGION \
+          --region=northamerica-northeast2 \
           --source=./stop-aclimate-instance \
           --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
           --no-allow-unauthenticated

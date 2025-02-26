@@ -12,7 +12,7 @@ steps:
           --entry-point start_compute_instance \
           --region=northamerica-northeast2 \
           --source=./start-aclimate-instance \
-          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
+          --set-secrets=PROJECT_ID=GCP_PROJECT_ID:latest,ZONE=GCP_ZONE:latest,INSTANCE_NAME=GCP_INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
         echo "✅ Desplegando stop_compute_instance..."
@@ -22,7 +22,7 @@ steps:
           --entry-point stop_compute_instance \
           --region=northamerica-northeast2 \
           --source=./stop-aclimate-instance \
-          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
+          --set-secrets=PROJECT_ID=GCP_PROJECT_ID:latest,ZONE=GCP_ZONE:latest,INSTANCE_NAME=GCP_INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
 timeout: 1200s

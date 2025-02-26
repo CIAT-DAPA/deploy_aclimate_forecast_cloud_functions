@@ -9,9 +9,9 @@ steps:
           --runtime python310 \
           --trigger-topic start-compute \
           --entry-point start_compute_instance \
-          --region=GCP_REGION=GCP_REGION:lates \
-          --source=start-aclimate-instance \
-          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
+          --region=$GCP_REGION \
+          --source=./start-aclimate-instance \
+          --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
         echo "✅ Desplegando stop_compute_instance..."
@@ -19,8 +19,12 @@ steps:
           --runtime python310 \
           --trigger-topic stop-compute \
           --entry-point stop_compute_instance \
-          --region=GCP_REGION=GCP_REGION:lates \
-          --source=stop-aclimate-instance \
-          --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
+          --region=$GCP_REGION \
+          --source=./stop-aclimate-instance \
+          --set-secrets=PROJECT_ID:latest,ZONE:latest,INSTANCE_NAME:latest \
           --no-allow-unauthenticated
+
 timeout: 1200s
+
+options:
+  logging: CLOUD_LOGGING_ONLY

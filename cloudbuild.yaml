@@ -10,7 +10,7 @@ steps:
           --trigger-topic start-compute \
           --entry-point start_compute_instance \
           --region=GCP_REGION=GCP_REGION:lates \
-          --source=start_instance \
+          --source=start-aclimate-instance \
           --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 
@@ -20,7 +20,7 @@ steps:
           --trigger-topic stop-compute \
           --entry-point stop_compute_instance \
           --region=GCP_REGION=GCP_REGION:lates \
-          --source=stop_instance \
+          --source=stop-aclimate-instance \
           --set-secrets=PROJECT_ID=PROJECT_ID:latest,ZONE=ZONE:latest,INSTANCE_NAME=INSTANCE_NAME:latest \
           --no-allow-unauthenticated
 timeout: 1200s

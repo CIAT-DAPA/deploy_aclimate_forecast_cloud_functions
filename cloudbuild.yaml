@@ -35,42 +35,48 @@ steps:
           --schedule="0 2 5 * *" \
           --time-zone="America/Bogota" \
           --topic=start-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
         # Scheduler para iniciar la instancia el día 15 de cada mes a las 2 AM
         gcloud scheduler jobs create pubsub start-compute-15 \
           --schedule="0 2 15 * *" \
           --time-zone="America/Bogota" \
           --topic=start-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
         # Scheduler para apagar la instancia el día 7 de cada mes a las 11 PM
         gcloud scheduler jobs create pubsub stop-compute-7 \
           --schedule="0 23 7 * *" \
           --time-zone="America/Bogota" \
           --topic=stop-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
         # Scheduler para apagar la instancia el día 20 de cada mes a las 11 PM
         gcloud scheduler jobs create pubsub stop-compute-20 \
           --schedule="0 23 20 * *" \
           --time-zone="America/Bogota" \
           --topic=stop-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
         # Programar el encendido a las 12:10 AM
         gcloud scheduler jobs create pubsub start-compute-test \
           --schedule="10 12 * * *" \
           --time-zone="America/Bogota" \
           --topic=start-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
         # Programar el apagado a las 12:15 AM
         gcloud scheduler jobs create pubsub stop-compute-test \
           --schedule="15 12 * * *" \
           --time-zone="America/Bogota" \
           --topic=stop-compute \
-          --message-body="{}"
+          --message-body="{}" \
+          --location=northamerica-northeast2
 
 timeout: 1200s
 

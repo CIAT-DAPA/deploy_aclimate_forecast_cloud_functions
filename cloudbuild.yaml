@@ -62,22 +62,6 @@ steps:
           --message-body="{}" \
           --location=northamerica-northeast1
 
-        # Programar el encendido a las 12:10 AM
-        gcloud scheduler jobs create pubsub start-compute-test \
-          --schedule="10 12 * * *" \
-          --time-zone="America/Bogota" \
-          --topic=start-compute \
-          --message-body="{}" \
-          --location=northamerica-northeast1
-
-        # Programar el apagado a las 12:15 AM
-        gcloud scheduler jobs create pubsub stop-compute-test \
-          --schedule="15 12 * * *" \
-          --time-zone="America/Bogota" \
-          --topic=stop-compute \
-          --message-body="{}" \
-          --location=northamerica-northeast1
-
 timeout: 1200s
 
 options:

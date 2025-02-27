@@ -36,7 +36,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=start-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
         # Scheduler para iniciar la instancia el día 15 de cada mes a las 2 AM
         gcloud scheduler jobs create pubsub start-compute-15 \
@@ -44,7 +44,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=start-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
         # Scheduler para apagar la instancia el día 7 de cada mes a las 11 PM
         gcloud scheduler jobs create pubsub stop-compute-7 \
@@ -52,7 +52,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=stop-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
         # Scheduler para apagar la instancia el día 20 de cada mes a las 11 PM
         gcloud scheduler jobs create pubsub stop-compute-20 \
@@ -60,7 +60,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=stop-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
         # Programar el encendido a las 12:10 AM
         gcloud scheduler jobs create pubsub start-compute-test \
@@ -68,7 +68,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=start-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
         # Programar el apagado a las 12:15 AM
         gcloud scheduler jobs create pubsub stop-compute-test \
@@ -76,7 +76,7 @@ steps:
           --time-zone="America/Bogota" \
           --topic=stop-compute \
           --message-body="{}" \
-          --location=northamerica-northeast2
+          --location=northamerica-northeast1
 
 timeout: 1200s
 

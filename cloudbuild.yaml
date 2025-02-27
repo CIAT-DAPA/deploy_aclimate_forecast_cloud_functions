@@ -32,7 +32,7 @@ steps:
         echo "✅ Creando Cloud Schedulers..."
         # Scheduler para iniciar la instancia el día 5 de cada mes a las 2 AM
         gcloud scheduler jobs create pubsub start-compute-5 \
-          --schedule="0 2 5 * *" \
+          --schedule="0 1 5 * *" \
           --time-zone="America/Bogota" \
           --topic=start-compute \
           --message-body="{}" \
@@ -41,7 +41,7 @@ steps:
 
         # Scheduler para iniciar la instancia el día 15 de cada mes a las 2 AM
         gcloud scheduler jobs create pubsub start-compute-15 \
-          --schedule="0 2 15 * *" \
+          --schedule="0 1 15 * *" \
           --time-zone="America/Bogota" \
           --topic=start-compute \
           --message-body="{}" \
